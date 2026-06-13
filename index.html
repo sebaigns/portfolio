@@ -418,5 +418,22 @@ document.querySelectorAll('.fbtn').forEach(function(btn){btn.addEventListener('c
 var secs=document.querySelectorAll('section[id]'),navAs=document.querySelectorAll('.nav-links a');
 secs.forEach(function(s){new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){navAs.forEach(function(a){a.classList.remove('active');});var a=document.querySelector('.nav-links a[href="#'+x.target.id+'"]');if(a)a.classList.add('active');}});},{threshold:.35}).observe(s);});
 </script>
+<!-- Lightbox -->
+<div id="lb" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:999;align-items:center;justify-content:center;cursor:zoom-out;" onclick="this.style.display='none'">
+  <img id="lb-img" style="max-width:92vw;max-height:92vh;border-radius:8px;box-shadow:0 0 60px rgba(0,0,0,0.8);"/>
+</div>
+<script>
+document.querySelectorAll('.pcard img').forEach(function(img){
+  img.style.cursor='zoom-in';
+  img.addEventListener('click',function(e){
+    e.stopPropagation();
+    document.getElementById('lb-img').src=this.src;
+    document.getElementById('lb').style.display='flex';
+  });
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')document.getElementById('lb').style.display='none';
+});
+</script>
 </body>
 </html>
