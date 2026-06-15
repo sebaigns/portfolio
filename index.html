@@ -23,13 +23,6 @@
     .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(42,53,70,.45) 1px,transparent 1px),linear-gradient(90deg,rgba(42,53,70,.45) 1px,transparent 1px);background-size:44px 44px;}
     .glow{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.09) 0%,transparent 65%);pointer-events:none;z-index:2;}
     .hero-center{position:relative;z-index:15;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto;}
-    .name-row{display:flex;align-items:center;gap:40px;}
-    .n-first{font-size:clamp(44px,6.5vw,74px);font-weight:800;color:var(--text);letter-spacing:.18em;text-transform:uppercase;line-height:1;will-change:transform;}
-    .n-last{font-size:clamp(44px,6.5vw,74px);font-weight:800;color:var(--teal);letter-spacing:.18em;text-transform:uppercase;line-height:1;will-change:transform;}
-    .photo-ring{width:clamp(108px,11vw,140px);height:clamp(108px,11vw,140px);border-radius:50%;border:2.5px solid var(--teal);overflow:hidden;box-shadow:0 0 0 8px rgba(45,212,191,.09);flex-shrink:0;will-change:transform;}
-    .photo-ring img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(8%) contrast(1.06);display:block;}
-    .hero-tagline{font-size:.8rem;font-weight:300;color:var(--muted);letter-spacing:.3em;text-transform:uppercase;margin-top:22px;}
-    .hero-sub{font-family:var(--mono);font-size:.72rem;color:var(--teal);letter-spacing:.18em;text-transform:uppercase;margin-top:7px;}
     .hero-cta{display:flex;gap:1rem;margin-top:24px;flex-wrap:wrap;justify-content:center;}
     .btn{display:inline-block;padding:.6rem 1.5rem;border-radius:5px;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;border:2px solid transparent;}
     .btn-p{background:var(--teal);color:var(--bg);border-color:var(--teal);}
@@ -91,7 +84,6 @@
     .slist li::before{content:"\203A";color:var(--teal);font-weight:700;}
     #contact{background:var(--bg2);text-align:center;}
     .contact-inner{max-width:560px;margin:0 auto;}
-    .contact-logo{margin:0 auto 2rem;width:200px;opacity:.82;display:block;}
     .contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;}
     footer{background:var(--bg);border-top:1px solid var(--border);padding:1.8rem 10vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
     footer p{font-size:.74rem;color:var(--muted);font-family:var(--mono);}
@@ -100,24 +92,26 @@
     .flinks a:hover{color:var(--teal);}
     .fi{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
     .fi.visible{opacity:1;transform:none;}
-    @media(max-width:900px){.name-row{gap:20px;}.about-grid{grid-template-columns:1fr;gap:2.5rem;}section{padding:4rem 6vw;}}
+    @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:2.5rem;}section{padding:4rem 6vw;}.insight-grid{grid-template-columns:1fr!important;}}
     @media(max-width:600px){.nav-links{display:none;}footer{flex-direction:column;text-align:center;}}
-    .hero-logo-big{display:flex;align-items:center;justify-content:center;margin-bottom:8px;position:relative;z-index:5;width:100%;}
-    .hero-center{position:relative;z-index:15;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;}
-    .word{z-index:1;}
-    .hero-logo-big img{width:clamp(280px,32vw,480px);height:auto;filter:drop-shadow(0 0 32px rgba(45,212,191,0.18));transition:transform .12s ease-out;}
-    .hero-tagline{font-size:.88rem;font-weight:300;color:var(--muted);letter-spacing:.36em;text-transform:uppercase;margin-top:10px;}
-    .hero-sub{font-family:var(--mono);font-size:.72rem;color:var(--teal);letter-spacing:.18em;text-transform:uppercase;margin-top:7px;}
     .nav-logo-svg{display:flex;align-items:center;}
     .nav-logo-svg svg{height:38px;width:auto;}
     .hero-logo-big{display:flex;align-items:center;justify-content:center;margin-bottom:8px;position:relative;z-index:5;width:100%;}
     .hero-center{position:relative;z-index:15;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;}
-    .word{z-index:1;}
     .hero-logo-big svg{width:clamp(340px,48vw,600px);height:auto;}
     .contact-logo-svg{margin:0 auto 2rem;display:flex;justify-content:center;}
     .contact-logo-svg svg{width:280px;height:auto;opacity:.88;}
     #particleCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;}
     .grid-bg{display:none;}
+
+    /* Project context blocks */
+    .proj-context{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.4rem 0 1.6rem;background:var(--bg);border-radius:8px;padding:1.2rem;border:1px solid var(--border);}
+    .proj-context-block{padding:.8rem 1rem;border-left:2px solid var(--teal);}
+    .proj-context-block h4{font-family:var(--mono);font-size:.62rem;color:var(--teal);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem;}
+    .proj-context-block p,.proj-context-block li{font-size:.78rem;color:var(--muted);line-height:1.55;}
+    .proj-context-block ul{padding-left:1rem;margin-top:.3rem;}
+    .proj-context-block li{margin-bottom:.2rem;}
+    @media(max-width:900px){.proj-context{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -134,7 +128,8 @@
   <text x="194" y="152" font-family="Georgia,serif" font-size="104" font-weight="700" fill="#F0F9FF">S</text>
   <text x="258" y="58" font-family="Georgia,serif" font-size="30" font-weight="600" fill="#5EEAD4">3</text>
   <text x="278" y="152" font-family="Raleway,sans-serif" font-size="60" font-weight="200" letter-spacing="2" fill="#94A3B8">ANALYTICS</text>
-</svg></a>  <ul class="nav-links">
+</svg></a>
+  <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -235,7 +230,7 @@
         <li>Built the WSA P&amp;L from scratch, establishing it as the regional financial cycle standard.</li>
         <li>Automated the annual budget consolidation process from <strong>5 hours to 30 minutes</strong>.</li>
       </ul></div>
-      <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Excel Avanzado</span><span class="tag">Financial Control</span><span class="tag">OPEX/SG&amp;A</span></div>
+      <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Advanced Excel</span><span class="tag">Financial Control</span><span class="tag">OPEX/SG&amp;A</span></div>
     </div>
     <div class="ti">
       <div class="ti-date">09/2020 &#8212; 02/2022</div>
@@ -245,21 +240,21 @@
         <li>Led inventory simulations reducing execution time by <strong>75%</strong>.</li>
         <li>Developed KPIs in SQL, Python and Power BI to support logistics decision-making.</li>
       </ul></div>
-      <div class="tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Log&#237;stica</span></div>
+      <div class="tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Logistics</span></div>
     </div>
     <div class="ti">
       <div class="ti-date">01/2020 &#8212; 04/2020</div>
       <div class="ti-role">Business Intelligence Analyst</div>
       <div class="ti-co">Cuponatic LATAM SpA</div>
       <div class="ti-desc"><ul><li>Led corporate reporting migration from Pentaho to Power BI across all business areas.</li></ul></div>
-      <div class="tags"><span class="tag">Power BI</span><span class="tag">Pentaho</span><span class="tag">Migraci&#243;n BI</span></div>
+      <div class="tags"><span class="tag">Power BI</span><span class="tag">Pentaho</span><span class="tag">Migration BI</span></div>
     </div>
   </div>
 </section>
 
 <section id="projects">
   <div class="fi"><p class="sec-label">// 03 &#8212; Projects</p><h2 class="sec-title">S&#179; Analytics Portfolio.</h2>
-  <p class="sec-intro">Dashboards and models with business-first design, clean DAX and visualizations that communicate without ambiguity.</p></div>
+  <p class="sec-intro">Dashboards engineered with advanced DAX, structured data models and Python automation — built to simplify reporting workflows, reduce cycle times and deliver clear, actionable insights that drive smarter business decisions.</p></div>
   <div class="filter-bar fi">
     <button class="fbtn active" data-f="all">All</button>
     <button class="fbtn" data-f="dashboard">Dashboard</button>
@@ -268,7 +263,39 @@
   </div>
   <div class="pgrid fi">
     <div class="pcard" data-cat="dashboard"><div class="pcat">Dashboard &#183; Power BI</div><div class="ptitle">P&amp;L Dashboard &#8212; CFO View</div><div class="pdesc">Executive dashboard with 4 pages: Overview, Detailed P&amp;L, Cost Analysis and Customer/Product View. Advanced DAX architecture with TREATAS.</div><div class="tags" style="margin-bottom:.8rem"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span></div><span class="coming">&#128204; Coming soon</span></div>
-    <div class="pcard" data-cat="dashboard" style="grid-column:1/-1;"><div class="pcat">Dashboard &#183; Power BI</div><div class="ptitle">Sales Performance Dashboard</div><div class="pdesc">Sales analysis with YoY comparisons, salesperson ranking and leaderboard, segmentation by region and product. Dark Navy &amp; Teal theme — 3 pages built for Head of Sales, Sales Reps and Sales Manager.</div><div class="tags" style="margin-bottom:1.2rem"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Python</span><span class="tag">YoY</span><span class="tag">Data Modeling</span></div>
+
+    <div class="pcard" data-cat="dashboard" style="grid-column:1/-1;">
+      <div class="pcat">Dashboard &#183; Power BI</div>
+      <div class="ptitle">Sales Performance Dashboard</div>
+      <div class="pdesc">Sales analysis with YoY comparisons, salesperson ranking and leaderboard, segmentation by region and product. Dark Navy &amp; Teal theme — 3 pages built for Head of Sales, Sales Reps and Sales Manager.</div>
+      <div class="tags" style="margin-bottom:1.2rem"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Python</span><span class="tag">YoY</span><span class="tag">Data Modeling</span></div>
+
+      <!-- Context blocks -->
+      <div class="proj-context">
+        <div class="proj-context-block">
+          <h4>&#127919; Objective</h4>
+          <p>To centralize sales performance analysis into a single tool that enables real-time commercial monitoring, profitability trend identification, and individual salesperson evaluation — replacing manual Excel reports with interactive, dynamic visualizations.</p>
+        </div>
+        <div class="proj-context-block">
+          <h4>&#128101; Target Audience</h4>
+          <ul>
+            <li><strong style="color:var(--text)">Head of Sales</strong> — executive view with global KPIs and YoY trends</li>
+            <li><strong style="color:var(--text)">Sales Manager</strong> — salesperson ranking and comparative performance analysis</li>
+            <li><strong style="color:var(--text)">Sales Rep</strong> — individual view of orders, customers and product profitability</li>
+          </ul>
+        </div>
+        <div class="proj-context-block">
+          <h4>&#128202; Key Insights</h4>
+          <ul>
+            <li>Technology is the most profitable category ($51M), while Furniture barely generates $3M</li>
+            <li>West region leads in revenue ($250M), Consumer segment holds the highest margin (13.7%)</li>
+            <li>Clear negative correlation between discount and margin — reps above 30% discount tend to operate at a loss</li>
+            <li>Sales peak consistently in Q4, suggesting seasonal planning opportunities</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dashboard images -->
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:.5rem;">
         <div style="border-radius:8px;overflow:hidden;border:1px solid var(--border);">
           <div style="font-family:var(--mono);font-size:.62rem;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;padding:.4rem .8rem;background:var(--bg);border-bottom:1px solid var(--border);">Page 1 — Main KPI's</div>
@@ -284,6 +311,7 @@
         </div>
       </div>
     </div>
+
     <div class="pcard" data-cat="python"><div class="pcat">Python &#183; Machine Learning</div><div class="ptitle">Modelo de Forecasting de Volumen</div><div class="pdesc">Linear regression with scikit-learn for logistics volume prediction at Maersk LAM/NAM. Under 8% error, feeding quarterly planning.</div><div class="tags" style="margin-bottom:.8rem"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Pandas</span></div><span class="coming">&#128204; Coming soon</span></div>
     <div class="pcard" data-cat="sql"><div class="pcat">SQL &#183; Integraci&#243;n de datos</div><div class="ptitle">Account Receivable Regional</div><div class="pdesc">Integration of 7+ systems (Dynamics, IFS, SAP, CargoWise) into a single data model in Power BI Service for LAM/NAM financial tracking.</div><div class="tags" style="margin-bottom:.8rem"><span class="tag">SQL</span><span class="tag">Power BI Service</span><span class="tag">ETL</span></div><span class="coming">&#128204; Coming soon</span></div>
   </div>
@@ -357,29 +385,22 @@
   var BG='#0b1120', TEAL='rgba(45,212,191,';
   var mx=0.5,my=0.5,cx2=0.5,cy2=0.5;
   var W,H,pts=[];
-
   function resize(){W=c.width=hero.offsetWidth;H=c.height=hero.offsetHeight;}
   resize();
   window.addEventListener('resize',function(){resize();initPts();});
-
   function initPts(){
     pts=[];
     var n=Math.max(55,Math.min(Math.floor(W*H/7000),130));
-    for(var i=0;i<n;i++){
-      pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5,r:Math.random()*1.8+0.8});
-    }
+    for(var i=0;i<n;i++){pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5,r:Math.random()*1.8+0.8});}
   }
   initPts();
-
   hero.addEventListener('mousemove',function(e){
     var r=hero.getBoundingClientRect();
     mx=(e.clientX-r.left)/W; my=(e.clientY-r.top)/H;
     cdot.style.opacity='1'; cring.style.opacity='1';
   });
   hero.addEventListener('mouseleave',function(){cdot.style.opacity='0';cring.style.opacity='0';});
-
   function lerp(a,b,n){return a+(b-a)*n;}
-
   function tick(){
     cx2=lerp(cx2,mx,.12); cy2=lerp(cy2,my,.12);
     var px=cx2*W, py=cy2*H;
@@ -400,18 +421,13 @@
       ctx.fillStyle=TEAL+'0.65)';ctx.fill();
       for(var j=i+1;j<pts.length;j++){
         var q=pts[j],dist=Math.sqrt((p.x-q.x)**2+(p.y-q.y)**2);
-        if(dist<110){
-          ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
-          ctx.strokeStyle=TEAL+(1-dist/110)*0.2+')';
-          ctx.lineWidth=0.5;ctx.stroke();
-        }
+        if(dist<110){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=TEAL+(1-dist/110)*0.2+')';ctx.lineWidth=0.5;ctx.stroke();}
       }
     }
     requestAnimationFrame(tick);
   }
   tick();
 })();
-
 var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:.08});
 document.querySelectorAll('.fi').forEach(function(el){obs.observe(el);});
 document.querySelectorAll('.fbtn').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.fbtn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');var f=btn.dataset.f;document.querySelectorAll('.pcard').forEach(function(c){c.style.display=(f==='all'||c.dataset.cat===f)?'':'none';});});});
@@ -437,3 +453,4 @@ document.addEventListener('keydown',function(e){
 </script>
 </body>
 </html>
+
